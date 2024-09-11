@@ -23,9 +23,9 @@ void DebugService::DrawQuestDebugView()
     ImGui::Begin("Quests");
 
     // TODO(cosideci): yes I'll refactor this
-    if (!m_world.GetPartyService().IsLeader())
+    if (!m_world.GetPartyService().IsInParty())
     {
-        ImGui::Text("You need to be the quest leader to access the quest debugger.");
+        ImGui::Text("You need to be in the party to access the quest debugger.");
     }
     else
     {
