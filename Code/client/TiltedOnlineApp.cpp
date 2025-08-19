@@ -19,6 +19,7 @@
 
 #include <ScriptExtender.h>
 #include <NvidiaUtil.h>
+#include "Games/MemoryManager.h"
 
 using TiltedPhoques::Debug;
 
@@ -111,6 +112,7 @@ bool TiltedOnlineApp::Detach()
 
 void TiltedOnlineApp::InstallHooks2()
 {
+    InstallMemoryPatches();
     TiltedPhoques::Initializer::RunAll();
 
     TiltedPhoques::DInputHook::Install();
